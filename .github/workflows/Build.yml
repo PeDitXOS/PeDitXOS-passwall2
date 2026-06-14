@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Upstream Repository
         uses: actions/checkout@main
         with:
-          repository: Openwrt-Passwall/luci-app-passwall
+          repository: Openwrt-Passwall/openwrt-passwall2
           fetch-depth: 0
           ref: main
 
@@ -102,7 +102,7 @@ jobs:
       - name: Checkout Upstream Repository
         uses: actions/checkout@main
         with:
-          repository: Openwrt-Passwall/luci-app-passwall
+          repository: Openwrt-Passwall/openwrt-passwall2
           ref: main
 
       - name: Install dependencies
@@ -155,7 +155,7 @@ jobs:
             -e 's|git\.openwrt\.org/openwrt|github.com/openwrt|g' \
             "feeds.conf.default"
           echo "src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main" > feeds.tmp
-          echo "src-git passwall2 https://github.com/Openwrt-Passwall/luci-app-passwall.git;main" >> feeds.tmp
+          echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main" >> feeds.tmp
           cat feeds.conf.default >> feeds.tmp
           mv feeds.tmp feeds.conf.default
           ./scripts/feeds update -a
@@ -241,7 +241,7 @@ jobs:
       - name: Checkout Upstream Repository
         uses: actions/checkout@main
         with:
-          repository: Openwrt-Passwall/luci-app-passwall
+          repository: Openwrt-Passwall/openwrt-passwall2
           ref: main
 
       - name: Initialization Environment
@@ -295,7 +295,7 @@ jobs:
             -e 's|git\.openwrt\.org/openwrt|github.com/openwrt|g' \
             "feeds.conf.default"
           echo "src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main" > feeds.tmp
-          echo "src-git passwall2 https://github.com/Openwrt-Passwall/luci-app-passwall.git;main" >> feeds.tmp
+          echo "src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main" >> feeds.tmp
           cat feeds.conf.default >> feeds.tmp
           mv feeds.tmp feeds.conf.default
           ./scripts/feeds update -a
